@@ -30,7 +30,7 @@ I have opted not to publish this tool on the npm registry. Given its nature as a
 To get started, run the following command:
 
 ```bash
-pm --help
+pm init
 ```
 
 This command triggers an interactive setup guide to help configure the project manager according to your preferences.
