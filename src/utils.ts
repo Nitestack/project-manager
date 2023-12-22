@@ -236,8 +236,9 @@ export function fuzzySearch(
                   result
                     .map(
                       (r) =>
-                        `${color.cyan(S_CONNECT_LEFT)}  ${color.dim(
-                          withBold(r.item.normalize(), r.positions),
+                        `${color.cyan(S_CONNECT_LEFT)}  ${withBold(
+                          r.item.normalize(),
+                          r.positions,
                         )}`,
                     )
                     .join("\n")
