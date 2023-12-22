@@ -1,5 +1,5 @@
 import { homedir } from "os";
-import { multilinePrompt } from "@utils";
+import { multilinePrompt } from "@src/clack/index.js";
 
 export const configPrompts = {
   basePath: () =>

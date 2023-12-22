@@ -1,13 +1,8 @@
 import { join, relative } from "node:path";
 import { execa } from "execa";
 import AppDataStore from "@src/store.js";
-import {
-  fuzzySearch,
-  getIntro,
-  getOutro,
-  handleCancel,
-  handleError,
-} from "@utils";
+import { getIntro, getOutro, handleCancel, handleError } from "@utils";
+import { fuzzySearch } from "@src/clack/fuzzy-finder.js";
 import { homedir } from "node:os";
 
 export async function selectProject(appDataStore: AppDataStore) {
@@ -21,7 +16,7 @@ export async function selectProject(appDataStore: AppDataStore) {
     config.projectDirectories.exclude.map((dir) => join(config.basePath, dir)),
   ).map((path) => relative(homedir(), path));
   const selection = await fuzzySearch({
-    items: projectDirectories,
+    options: projectDirectories.map((d) => ({ value: d, label: d })),
     message: `Enter a project directory (relative to '${homedir()}')`,
   });
   handleCancel(selection, "Project selection cancelled.");
