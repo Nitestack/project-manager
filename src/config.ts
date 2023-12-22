@@ -111,14 +111,17 @@ export async function setConfig(appDataStore: AppDataStore) {
         // @ts-expect-error Type inference doesn't work here
         includeProjects: ({ results: { basePath } }) =>
           text({
-            message: configPrompts.projectInclude(basePath ?? config.basePath),
+            message: configPrompts.projectInclude(),
             initialValue: config.projectDirectories.include.length
               ? directoriesToString(config.projectDirectories.include, true)
               : undefined,
             placeholder: !config.projectDirectories.include.length
               ? configPrompts.projectIncludeExample
               : undefined,
-            validate: validateDirectoryString(basePath ?? config.basePath),
+            validate: validateDirectoryString(
+              basePath ?? config.basePath,
+              true,
+            ),
           }),
       }),
       ...(selection.includes("exclude") && {

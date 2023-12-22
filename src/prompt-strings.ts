@@ -14,9 +14,9 @@ export const configPrompts = {
     multilinePrompt(
       "Which program do you want to open your projects with?\n(the current working directory will be the selected project directory)",
     ),
-  projectInclude: (basePath: string) =>
+  projectInclude: () =>
     multilinePrompt(
-      `Which projects do you want to include?\nSeparate them with a comma\n(must be inside '${basePath}', only specify relative paths)`,
+      `Which projects do you want to include?\nSeparate them with a comma\n(must be inside '${homedir()}', only specify relative paths)`,
     ),
   projectExclude: (basePath: string) =>
     multilinePrompt(

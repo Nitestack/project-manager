@@ -21,14 +21,23 @@ export function getDirectoriesFromString(directoriesString: string | unknown) {
   const uniqueEntries = [...new Set(directoriesString.split(","))];
   return uniqueEntries.map((entry) => entry.trim()).filter(Boolean);
 }
-export function validateDirectoryString(basePath: string) {
+export function validateDirectoryString(
+  basePath: string,
+  isRelativeToHome = false,
+) {
   return function (value: string) {
     const subDirs = getDirectoriesFromString(value);
-    if (!subDirs.every((subDir) => existsSync(join(basePath, subDir))))
+    if (
+      !subDirs.every((subDir) =>
+        existsSync(join(isRelativeToHome ? homedir() : basePath, subDir)),
+      )
+    )
       return "Some directories do not exist";
     if (
       !subDirs.every((subDir) =>
-        lstatSync(join(basePath, subDir)).isDirectory(),
+        lstatSync(
+          join(isRelativeToHome ? homedir() : basePath, subDir),
+        ).isDirectory(),
       )
     )
       return "Some paths are not directories";

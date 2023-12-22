@@ -48,9 +48,9 @@ export async function init(appDataStore: AppDataStore) {
       projectInclude: ({ results: { basePath } }) => {
         if (!basePath) return cancel(cancelPrompts.init);
         return text({
-          message: getOptionalString(configPrompts.projectInclude(basePath)),
+          message: getOptionalString(configPrompts.projectInclude()),
           placeholder: configPrompts.projectIncludeExample,
-          validate: validateDirectoryString(basePath),
+          validate: validateDirectoryString(basePath, true),
         });
       },
       projectExclude: ({ results: { basePath } }) => {
