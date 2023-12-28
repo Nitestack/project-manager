@@ -1,6 +1,6 @@
 {
   "name": "@nitestack/project-manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Project Manager is a CLI tool for managing projects.",
   "repository": {
     "type": "git",
