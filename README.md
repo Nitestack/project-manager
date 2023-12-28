@@ -4,6 +4,30 @@ Project Manager is a command-line interface (CLI) tool designed to streamline pr
 
 ## Installation
 
+### npm
+
+```bash
+npm install -g @nitestack/project-manager
+```
+
+### yarn
+
+```bash
+yarn add -g @nitestack/project-manager
+```
+
+### pnpm
+
+```bash
+pnpm add -g @nitestack/project-manager
+```
+
+### bun
+
+```bash
+bun add -g @nitestack/project-manager
+```
+
 ## Usage
 
 To get started, run the following command:
