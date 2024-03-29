@@ -1,8 +1,17 @@
-# Project Manager CLI
-
+# Project Manager
 Project Manager is a command-line interface (CLI) tool designed to streamline project management, allowing you to swiftly navigate between different projects.
 
-## Installation
+## 🧭 Features
+- Use fuzzy search to switch between different project environments
+- Configure the CLI according to your preferences
+  - Edit base path of projects
+  - Add/Remove subdirectories
+  - Include/Exclude projects
+  - Edit command to open project within terminal
+## 📦 Requirements
+- [Node.js](https://nodejs.org/en/download)
+
+## 🔧 Installation
 
 ### npm
 
@@ -28,7 +37,7 @@ pnpm add -g @nitestack/project-manager
 bun add -g @nitestack/project-manager
 ```
 
-## Usage
+## 🚀 Usage
 
 To get started, run the following command:
 
@@ -38,10 +47,8 @@ pm init
 
 This command triggers an interactive setup guide to help configure the project manager according to your preferences.
 
-For assistance and information about the CLI, run the following command:
+Use `pm --help` to see all available options.
 
-```bash
-pm --help
-```
+## 📖 License
 
-Wishing you seamless project management!
+This project is licensed under the Apache-2.0 license.
